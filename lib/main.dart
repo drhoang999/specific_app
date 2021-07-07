@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'specific_handle.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,7 +11,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -22,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Formal Specification'),
     );
   }
 }
@@ -93,19 +96,17 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            (RaisedButton
-        onPressed:() {
-
-      }
+            RaisedButton(
+              onPressed: () {
+                Get.to(SpecificHandleScreen());
+              },
               child: Text(
-                'You have pushed the button this many times:',
+                'Run',
               ),
             ),
-
           ],
         ),
       ),
-
     );
   }
 }
